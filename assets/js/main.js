@@ -175,4 +175,42 @@ themeButton.addEventListener('click', () => {
     localStorage.setItem('selected-theme', getCurrentTheme())
     localStorage.setItem('selected-icon', getCurrentIcon())
 })
- 
+
+/*==================== CONTACT FORM ====================*/
+const contactForm = document.getElementById('contact-form'),
+      contactName = document.getElementById('contact-name'),
+      contactEmail = document.getElementById('contact-email'),
+      contactProject = document.getElementById('contact-project'),
+      contactMessage = document.getElementById('contact-message')
+
+const sendEmail = (e) => {
+    e.preventDefault()
+
+    // Check if the field has a value
+    if(contactName.value === '' || contactEmail.value === '' || contactProject.value === '' || contactMessage.value === ''){
+        // Add and remove color
+        alert('Veuillez remplir tous les champs 📩')
+    } else{
+        // Construct mailto link
+        // email = expediteur (put in body)
+        // projet = objet (subject)
+        // nom + message = message
+        
+        const recipient = 'emmanuelgmc123@gmail.com'
+        const subject = encodeURIComponent(contactProject.value)
+        const body = encodeURIComponent(`De: ${contactName.value} (${contactEmail.value})\n\nMessage:\n${contactMessage.value}`)
+        
+        // Open email client
+        window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`
+        
+        // Clear input field
+        contactName.value = ''
+        contactEmail.value = ''
+        contactProject.value = ''
+        contactMessage.value = ''
+    }
+}
+
+if(contactForm){
+    contactForm.addEventListener('submit', sendEmail)
+}
