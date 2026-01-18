@@ -17,6 +17,10 @@
     <meta name="description" content="Portfolio professionnel de M'BO MELVIN - Développeur Web Full Stack avec expertise en design UI/UX">
 </head>
 <body>
+    <!--==================== MOUSE CURSOR ====================-->
+    <div class="mouse-cursor cursor-outer"></div>
+    <div class="mouse-cursor cursor-inner"></div>
+
     <!--==================== HEADER ====================-->
     <header class="header" id="header">
         <nav class="nav container">
@@ -88,27 +92,15 @@
                     </div>
 
                     <div class="home__img">
-                        <svg class="home__blob" viewBox="0 0 200 187" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <mask id="mask0" mask-type="alpha">
-                                <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 165.547 
-                                130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 129.362C2.45775 
-                                97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 -0.149132 97.9666 
-                                0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"/>
-                            </mask>
-                            <g mask="url(#mask0)">
-                                <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 
-                                165.547 130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 
-                                129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 
-                                -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"/>
-                                <image class="home__blob-img" x='12' y='18' xlink:href="assets/img/profile.png"/>
-                            </g>
-                        </svg>
+                        <div class="home__profile">
+                           <img src="assets/img/profile.png" alt="" class="home__blob-img">
+                        </div>
                     </div>
 
                     <div class="home__data">
                         <h1 class="home__title">Bonjour, je suis M'BO MELVIN Emmanuel</h1>
                         <h3 class="home__subtitle">Étudiant Ingénieur en Informatique (SIGL)</h3>
-                        <p class="home__description">Passionné par le développement logiciel, l'apprentissage cybersécurité IA et l'intelligence artificielle. Recherche un stage de fin d'études à partir de février 2026.</p>
+                        <p class="home__description">Passionné par le développement logiciel, l'apprentissage cybersécurité IA et l'intelligence artificielle. Recherche un stage de fin d'études à partir de mi-mars 2026.</p>
                         <a href="#contact" class="button button--flex">
                             Me contacter <i class="uil uil-message button__icon"></i>
                         </a>
@@ -245,7 +237,7 @@
                             <i class="uil uil-server-network skills__icon"></i>
 
                             <div>
-                                <h1 class="skills__title">Développement Backend (Spécialité)</h1>
+                                <h1 class="skills__title">Développement Backend</h1>
                                 <span class="skills__subtitle">Expertise principale</span>
                             </div>
 
@@ -255,7 +247,7 @@
                         <div class="skills__list grid">
                             <div class="skills__data">
                                 <div class="skills__titles">
-                                    <h3 class="skills__name">Python (Certifié)</h3>
+                                    <h3 class="skills__name">Python</h3>
                                     <span class="skills__number">90%</span>
                                 </div>
                                 <div class="skills__bar">
@@ -516,19 +508,19 @@
                             <ul class="services__modal-services grid">
                                 <li class="services__modal-service">
                                     <i class="uil uil-check-circle services__modal-icon"></i>
-                                    <p>Développement d'APIs RESTful robustes avec Django/FastAPI.</p>
+                                    <p>Développement d'APIs RESTful robustes avec Django/FastAPI</p>
                                 </li>
                                 <li class="services__modal-service">
                                     <i class="uil uil-check-circle services__modal-icon"></i>
-                                    <p>Architecture backend scalable et sécurisée.</p>
+                                    <p>Architecture backend scalable et sécurisée</p>
                                 </li>
                                 <li class="services__modal-service">
                                     <i class="uil uil-check-circle services__modal-icon"></i>
-                                    <p>Intégration de bases de données et optimisation.</p>
+                                    <p>Intégration de bases de données et IA</p>
                                 </li>
                                 <li class="services__modal-service">
                                     <i class="uil uil-check-circle services__modal-icon"></i>
-                                    <p>Développement de chatbots intelligents avec ML.</p>
+                                    <p>Développement de chatbots intelligents</p>
                                 </li>
                             </ul>
                         </div>
@@ -555,19 +547,19 @@
                             <ul class="services__modal-services grid">
                                 <li class="services__modal-service">
                                     <i class="uil uil-check-circle services__modal-icon"></i>
-                                    <p>Développement de modèles Machine Learning et Deep Learning.</p>
+                                    <p>Développement de modèles Machine Learning</p>
                                 </li>
                                 <li class="services__modal-service">
                                     <i class="uil uil-check-circle services__modal-icon"></i>
-                                    <p>Intégration d'APIs IA dans des applications.</p>
+                                    <p>Intégration d'APIs IA dans des applications</p>
                                 </li>
                                 <li class="services__modal-service">
                                     <i class="uil uil-check-circle services__modal-icon"></i>
-                                    <p>Chatbots intelligents et assistants conversationnels.</p>
+                                    <p>Chatbots intelligents et assistants conversationnels</p>
                                 </li>
                                 <li class="services__modal-service">
                                     <i class="uil uil-check-circle services__modal-icon"></i>
-                                    <p>Prompt Engineering et optimisation de modèles IA.</p>
+                                    <p>Prompt Engineering</p>
                                 </li>
                             </ul>
                         </div>
@@ -598,15 +590,15 @@
                                 </li>
                                 <li class="services__modal-service">
                                     <i class="uil uil-check-circle services__modal-icon"></i>
-                                    <p>Sécurité des applications et infrastructures.</p>
+                                    <p>Sécurité infrastructures LAN</p>
                                 </li>
                                 <li class="services__modal-service">
                                     <i class="uil uil-check-circle services__modal-icon"></i>
-                                    <p>Configuration et gestion de réseaux Cisco.</p>
+                                    <p>Configuration et gestion de réseaux Cisco</p>
                                 </li>
                                 <li class="services__modal-service">
                                     <i class="uil uil-check-circle services__modal-icon"></i>
-                                    <p>Apprentissage Cybersécurité appliquée à l'intelligence artificielle.</p>
+                                    <p>Apprentissage Cybersécurité appliquée à l'intelligence artificielle</p>
                                 </li>
                             </ul>
                         </div>
@@ -629,6 +621,11 @@
                         <div class="portfolio__data">
                             <h3 class="portfolio__title">AgriTech E-commerce</h3>
                             <p class="portfolio__description">Plateforme e-commerce complète pour le secteur agricole développée avec Django. Gestion des produits, commandes et paiements en ligne.</p>
+                            <div class="portfolio__stack">
+                                <span class="portfolio__badge">Django</span>
+                                <span class="portfolio__badge">Python</span>
+                                <span class="portfolio__badge">PostgreSQL</span>
+                            </div>
                             <a href="https://github.com/Melv2412/APP2.git" target="_blank" class="button button--flex button--small portfolio__button">
                                 GitHub
                                 <i class="uil uil-arrow-right button__icon"></i>
@@ -643,6 +640,11 @@
                         <div class="portfolio__data">
                             <h3 class="portfolio__title">EsaticLearn - Plateforme E-learning</h3>
                             <p class="portfolio__description">Plateforme d'apprentissage en ligne complète avec gestion de cours, quiz interactifs et suivi de progression des étudiants.</p>
+                            <div class="portfolio__stack">
+                                <span class="portfolio__badge">Django</span>
+                                <span class="portfolio__badge">React</span>
+                                <span class="portfolio__badge">DRF</span>
+                            </div>
                             <a href="https://github.com/Melv2412/Esaticlearn.git" target="_blank" class="button button--flex button--small portfolio__button">
                                 GitHub
                                 <i class="uil uil-arrow-right button__icon"></i>
@@ -657,6 +659,11 @@
                         <div class="portfolio__data">
                             <h3 class="portfolio__title">Q-Learning Labyrinthe</h3>
                             <p class="portfolio__description">Projet d'apprentissage par renforcement utilisant l'algorithme Q-Learning où un agent trouve le chemin optimal pour atteindre la sortie d'un labyrinthe.</p>
+                            <div class="portfolio__stack">
+                                <span class="portfolio__badge">Python</span>
+                                <span class="portfolio__badge">RL</span>
+                                <span class="portfolio__badge">Numpy</span>
+                            </div>
                             <a href="https://github.com/Melv2412/RL_Labyrinthe.git" target="_blank" class="button button--flex button--small portfolio__button">
                                 GitHub
                                 <i class="uil uil-arrow-right button__icon"></i>
@@ -671,6 +678,11 @@
                         <div class="portfolio__data">
                             <h3 class="portfolio__title">SuperMarket Manager</h3>
                             <p class="portfolio__description">Système de gestion complète de supermarché avec gestion des stocks, des ventes, des employés et génération de rapports financiers.</p>
+                            <div class="portfolio__stack">
+                                <span class="portfolio__badge">Django</span>
+                                <span class="portfolio__badge">Bootstrap</span>
+                                <span class="portfolio__badge">SQLite</span>
+                            </div>
                             <a href="https://github.com/Melv2412/supermarche.git" target="_blank" class="button button--flex button--small portfolio__button">
                                 GitHub
                                 <i class="uil uil-arrow-right button__icon"></i>
@@ -698,7 +710,7 @@
                 <div class="project__container container grid">
                     <div class="project__data">
                         <h2 class="project__title">Recherche de Stage</h2>
-                        <p class="project__description">Je recherche un stage de fin d'études de 3 mois à partir de février 2026 en développement backend, cybersécurité IA ou développement IA.</p>
+                        <p class="project__description">Je recherche un stage de fin d'études de 3 mois à partir de milieu mars 2026 en développement backend ou fullstack.</p>
                         <a href="#contact" class="button button--flex button--white">
                             Me contacter
                             <i class="uil uil-message project__icon button__icon"></i>
@@ -811,7 +823,7 @@
                 </div>
             </div>
 
-            <p class="footer__copy">&#169; M'BO MELVIN Emmanuel. Tous droits réservés</p>
+            <p class="footer__copy"> M'BO MELVIN MARC EMMANUEL</p>
         </div>
     </footer>
     
@@ -819,6 +831,9 @@
     <a href="#" class="scrollup" id="scroll-up">
         <i class="uil uil-arrow-up scrollup__icon"></i>
     </a>
+
+    <!--==================== SCROLL REVEAL ====================-->
+    <script src="https://unpkg.com/scrollreveal"></script>
 
     <!--==================== SWIPER JS ====================-->
     <script src="assets/js/swiper-bundle.min.js"></script>

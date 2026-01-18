@@ -214,3 +214,67 @@ const sendEmail = (e) => {
 if(contactForm){
     contactForm.addEventListener('submit', sendEmail)
 }
+
+/*==================== SCROLL REVEAL ANIMATION ====================*/
+const sr = ScrollReveal({
+    origin: 'top',
+    distance: '30px',
+    duration: 2000,
+    reset: true
+});
+
+sr.reveal(`.home__data, .home__img, 
+            .about__data, .about__img,
+            .services__content, .menu__content,
+            .app__data, .app__img,
+            .contact__data, .contact__button,
+            .footer__content`, {
+    interval: 200
+})
+
+sr.reveal(`.home__social, .home__scroll,
+            .about__info,
+            .skills__content,
+            .qualification__tabs,
+            .portfolio__container`, {
+    origin: 'left',
+    interval: 200
+})
+
+/*==================== CUSTOM CURSOR ====================*/
+function customCursor() {
+    const cursorInner = document.querySelector('.cursor-inner');
+    const cursorOuter = document.querySelector('.cursor-outer');
+    let mouseX = 0, mouseY = 0;
+    let isHovering = false;
+
+    window.addEventListener('mousemove', (e) => {
+        if (!isHovering) {
+            cursorInner.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+        }
+        cursorOuter.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        
+        cursorInner.style.visibility = 'visible';
+        cursorOuter.style.visibility = 'visible';
+    });
+
+    const hoverItems = document.querySelectorAll('a, button, .services__button, .skills__header, .change-theme');
+
+    hoverItems.forEach(item => {
+        item.addEventListener('mouseenter', () => {
+            isHovering = true;
+            cursorInner.classList.add('cursor-hover');
+        });
+        item.addEventListener('mouseleave', () => {
+            isHovering = false;
+            cursorInner.classList.remove('cursor-hover');
+        });
+    });
+}
+
+// Check if device is desktop for cursor
+if (window.innerWidth > 1024) {
+    customCursor();
+}

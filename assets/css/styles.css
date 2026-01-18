@@ -1,46 +1,51 @@
 /*==================== GOOGLE FONTS ====================*/
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap");
 
 /*==================== VARIABLES CSS ====================*/
 :root {
-  --header-height: 3rem;
+  --header-height: 3.5rem;
 
   /*========== Colors ==========*/
   /* Change favorite color */
-  --hue-color: 250; /*Purple 250 - Green 142 - Blue 230 - Pink 340*/
+  --hue-color: 230; /* Blue/Indigo base */
 
-  /* HSL color mode */
-  --first-color: hsl(var(--hue-color), 69%, 61%);
-  --first-color-second: hsl(var(--hue-color), 69%, 61%);
-  --first-color-alt: hsl(var(--hue-color), 57%, 53%);
-  --first-color-lighter: hsl(var(--hue-color), 92%, 85%);
-  --title-color: hsl(var(--hue-color), 8%, 15%);
-  --text-color: hsl(var(--hue-color), 8%, 45%);
-  --text-color-light: hsl(var(--hue-color), 8%, 65%);
+  /* HSL color mode - Modern Palette */
+  --first-color: hsl(var(--hue-color), 89%, 60%);
+  --first-color-second: hsl(var(--hue-color), 89%, 60%);
+  --first-color-alt: hsl(var(--hue-color), 89%, 55%);
+  --first-color-lighter: hsl(var(--hue-color), 89%, 85%);
+  --title-color: hsl(var(--hue-color), 15%, 15%);
+  --text-color: hsl(var(--hue-color), 12%, 35%);
+  --text-color-light: hsl(var(--hue-color), 8%, 55%);
   --input-color: hsl(var(--hue-color), 70%, 96%);
-  --body-color: hsl(var(--hue-color), 60%, 99%);
+  --body-color: hsl(var(--hue-color), 40%, 98%);
   --container-color: #fff;
   --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
   --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
 
   /*========== Font and typography ==========*/
-  --body-font: "Poppins", sans-serif;
+  --body-font: "Outfit", sans-serif;
 
   /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
-  --big-font-size: 2rem;
-  --h1-font-size: 1.5rem;
-  --h2-font-size: 1.25rem;
-  --h3-font-size: 1.125rem;
-  --normal-font-size: 0.938rem;
-  --small-font-size: 0.813rem;
-  --smaller-font-size: 0.75rem;
+  --big-font-size: 2.25rem;
+  --h1-font-size: 1.75rem;
+  --h2-font-size: 1.5rem;
+  --h3-font-size: 1.25rem;
+  --normal-font-size: 1rem;
+  --small-font-size: 0.875rem;
+  --smaller-font-size: 0.813rem;
 
   /*========== Font weight ==========*/
   --font-medium: 500;
   --font-semi-bold: 600;
+  --font-bold: 700;
+
+  /*========== Glassmorphism ==========*/
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.3);
+  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
 
   /*========== Margenes Bottom ==========*/
-  /* .25rem = 4px, .5rem = 8px, .75rem = 12px ... */
   --mb-0-25: 0.25rem;
   --mb-0-5: 0.5rem;
   --mb-0-75: 0.75rem;
@@ -73,13 +78,17 @@
 body.dark-theme {
   /* HSL color mode */
   --first-color-second: hsl(var(--hue-color), 30%, 8%);
-  --title-color: hsl(var(--hue-color), 8%, 95%);
-  --text-color: hsl(var(--hue-color), 8%, 75%);
-  --input-color: hsl(var(--hue-color), 29%, 16%);
-  --body-color: hsl(var(--hue-color), 28%, 12%);
-  --container-color: hsl(var(--hue-color), 29%, 16%);
-  --scroll-bar-color: hsl(var(--hue-color), 12%, 48%);
-  --scroll-thumb-color: hsl(var(--hue-color), 12%, 36%);
+  --title-color: hsl(var(--hue-color), 10%, 95%);
+  --text-color: hsl(var(--hue-color), 10%, 75%);
+  --input-color: hsl(var(--hue-color), 25%, 12%);
+  --body-color: hsl(var(--hue-color), 25%, 8%);
+  --container-color: hsl(var(--hue-color), 25%, 12%);
+  --scroll-bar-color: hsl(var(--hue-color), 12%, 25%);
+  --scroll-thumb-color: hsl(var(--hue-color), 12%, 35%);
+
+  --glass-bg: rgba(20, 20, 30, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.05);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
 }
 
 /*========== Button Dark/Light ==========*/
@@ -116,6 +125,82 @@ body {
   font-size: var(--normal-font-size);
   background-color: var(--body-color);
   color: var(--text-color);
+  overflow-x: hidden;
+  position: relative;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Custom Cursor */
+.mouse-cursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  border-radius: 50%;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  visibility: hidden;
+}
+
+.cursor-outer {
+  margin-left: -15px;
+  margin-top: -15px;
+  width: 30px;
+  height: 30px;
+  border: 2px solid var(--first-color);
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  z-index: 10000;
+  opacity: 0.5;
+  transition: all 0.08s ease-out;
+}
+
+.cursor-inner {
+  margin-left: -3px;
+  margin-top: -3px;
+  width: 6px;
+  height: 6px;
+  z-index: 10001;
+  background-color: var(--first-color);
+  transition: width 0.3s ease-in-out, height 0.3s ease-in-out, margin 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.cursor-inner.cursor-hover {
+  width: 50px;
+  height: 50px;
+  margin-left: -25px;
+  margin-top: -25px;
+  opacity: 0.1;
+}
+
+@media screen and (max-width: 1024px) {
+  .mouse-cursor {
+    display: none;
+  }
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: -1;
+  opacity: 0.15;
+}
+
+body::before {
+  background: var(--first-color);
+  top: -150px;
+  right: -150px;
+}
+
+body::after {
+  background: var(--first-color-alt);
+  bottom: -150px;
+  left: -150px;
 }
 
 h1,
@@ -178,7 +263,11 @@ img {
   bottom: 0;
   left: 0;
   z-index: var(--z-fixed);
-  background-color: var(--body-color);
+  background-color: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top: 1px solid var(--glass-border);
+  transition: 0.4s;
 }
 
 /*==================== NAV ====================*/
@@ -270,7 +359,10 @@ img {
 
 /* Change background header */
 .scroll-header {
-  box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  background-color: var(--glass-bg);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid var(--glass-border);
 }
 
 /*==================== HOME ====================*/
@@ -299,15 +391,31 @@ img {
   color: var(--first-color-alt);
 }
 
-.home__blob {
+.home__profile {
+  position: relative;
   width: 200px;
-  fill: var(--first-color);
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, var(--first-color) 0%, var(--first-color-alt) 100%);
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  animation: morph 8s ease-in-out infinite;
+  box-shadow: 0 10px 40px rgba(var(--hue-color), 89%, 60%, 0.2);
 }
 
 .home__blob-img {
-  width: 170px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  mix-blend-mode: normal;
+  border-radius: inherit;
+  border: 5px solid rgba(255, 255, 255, 0.2);
+}
+
+@keyframes morph {
+  0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+  50% { border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%; }
+  100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
 }
 
 .home__data {
@@ -360,15 +468,18 @@ img {
 /*==================== BUTTONS ====================*/
 .button {
   display: inline-block;
-  background-color: var(--first-color);
+  background: linear-gradient(135deg, var(--first-color) 0%, var(--first-color-alt) 100%);
   color: #fff;
-  padding: 1rem;
-  border-radius: 0.5rem;
+  padding: 1.15rem 2rem;
+  border-radius: 0.75rem;
   font-weight: var(--font-medium);
+  box-shadow: 0 4px 15px rgba(var(--hue-color), 89%, 60%, 0.3);
+  transition: all 0.3s ease;
 }
 
 .button:hover {
-  background-color: var(--first-color-alt);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(var(--hue-color), 89%, 60%, 0.4);
 }
 
 .button__icon {
@@ -388,22 +499,40 @@ img {
 
 .button--link {
   padding: 0;
-  background-color: transparent;
+  background: none;
   color: var(--first-color);
+  box-shadow: none;
 }
 
 .button--link:hover {
-  background-color: transparent;
+  background: none;
+  color: var(--first-color-alt);
+  transform: translateX(0.25rem);
+}
+
+/* Specific fix for when button class is used for link-style buttons */
+.button.button--link {
+  background: none;
+  box-shadow: none;
+  padding: 0;
+  color: var(--first-color);
+  font-weight: var(--font-semi-bold);
+}
+
+.button.button--link:hover {
+  background: none;
   color: var(--first-color-alt);
 }
 
 .button--white {
-  background-color: #fff;
-  color: var(--first-color);
+  background: #fff !important;
+  color: var(--first-color) !important;
 }
 
 .button--white:hover {
-  background-color: #fff;
+  background: #fff !important;
+  color: var(--first-color-alt) !important;
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
 }
 
 /*==================== ABOUT ====================*/
@@ -420,25 +549,24 @@ img {
 }
 
 .about__info {
-  display: flex;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
   margin-bottom: var(--mb-2-5);
 }
 
-.about__info-title {
-  font-size: var(--h2-font-size);
-  font-weight: var(--font-semi-bold);
-  color: var(--title-color);
-}
-
-.about__info-name {
-  font-size: var(--smaller-font-size);
-}
-
-.about__info-title,
-.about__info-name {
-  display: block;
+.about__info > div {
+  background-color: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  padding: 1rem 0.5rem;
+  border-radius: 1rem;
   text-align: center;
+  transition: 0.3s;
+}
+
+.about__info > div:hover {
+  transform: translateY(-5px);
+  background-color: var(--container-color);
 }
 
 .about__buttons {
@@ -506,11 +634,32 @@ img {
 
 .skills__bar {
   background-color: var(--first-color-lighter);
+  height: 8px;
+  overflow: hidden;
 }
 
 .skills__percentage {
   display: block;
-  background-color: var(--first-color);
+  height: 100%;
+  background: linear-gradient(90deg, var(--first-color) 0%, var(--first-color-alt) 100%);
+  border-radius: 0.25rem;
+  position: relative;
+}
+
+.skills__percentage::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  animation: shine 2s infinite;
+}
+
+@keyframes shine {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
 }
 
 .skills__html {
@@ -667,15 +816,19 @@ img {
 
 .services__content {
   position: relative;
-  background-color: var(--container-color);
+  background-color: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   padding: 3.5rem 0.5rem 1.25rem 1.5rem;
-  border-radius: 0.25rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-  transition: 0.3s;
+  border-radius: 1rem;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  transition: 0.4s;
 }
 
 .services__content:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-0.5rem);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
 }
 
 .services__icon {
@@ -694,6 +847,14 @@ img {
 .services__button {
   cursor: pointer;
   font-size: var(--small-font-size);
+  color: var(--first-color);
+  display: inline-flex;
+  align-items: center;
+  margin-top: var(--mb-1);
+}
+
+.services__button:hover {
+  text-decoration: underline;
 }
 
 .services__button:hover .button__icon {
@@ -719,9 +880,15 @@ img {
 
 .services__modal-content {
   position: relative;
-  background-color: var(--container-color);
-  padding: 1.5rem;
-  border-radius: 0.5rem;
+  background-color: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 3rem 2rem;
+  border-radius: 1.5rem;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  max-width: 500px;
+  width: 90%;
 }
 
 .services__modal-services {
@@ -769,8 +936,14 @@ img {
 
 .portfolio__img {
   width: 265px;
-  border-radius: 0.5rem;
+  border-radius: 1.5rem;
   justify-self: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: 0.4s;
+}
+
+.portfolio__content:hover .portfolio__img {
+  transform: scale(1.05);
 }
 
 .portfolio__title {
@@ -779,7 +952,27 @@ img {
 }
 
 .portfolio__description {
-  margin-bottom: var(--mb-0-75);
+  margin-bottom: var(--mb-1);
+}
+
+.portfolio__stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: var(--mb-1-5);
+}
+
+.portfolio__badge {
+  font-size: var(--smaller-font-size);
+  background-color: var(--first-color-lighter);
+  color: var(--first-color);
+  padding: 0.25rem 0.75rem;
+  border-radius: 2rem;
+  font-weight: var(--font-medium);
+}
+
+body.dark-theme .portfolio__badge {
+  background-color: var(--input-color);
 }
 
 .portfolio__button:hover .button__icon {
@@ -826,10 +1019,12 @@ img {
 .project__bg {
   background: linear-gradient(
     135deg,
-    hsl(250, 69%, 61%) 0%,
-    hsl(250, 57%, 53%) 100%
+    hsl(var(--hue-color), 89%, 60%) 0%,
+    hsl(var(--hue-color), 89%, 55%) 100%
   );
   padding-top: 3rem;
+  border-radius: 2rem;
+  margin: 0 var(--mb-1-5);
 }
 
 .project__title {
@@ -919,18 +1114,26 @@ img {
 
 .contact__content {
   background-color: var(--input-color);
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   padding: 0.75rem 1rem 0.25rem;
+  border: 1px solid transparent;
+  transition: 0.3s;
+}
+
+.contact__content:focus-within {
+  border: 1px solid var(--first-color);
+  box-shadow: 0 0 10px rgba(var(--hue-color), 89%, 60%, 0.1);
 }
 
 .contact__label {
   font-size: var(--smaller-font-size);
-  color: var(--title-color);
+  color: var(--text-color-light);
+  font-weight: var(--font-medium);
 }
 
 .contact__input {
   width: 100%;
-  background-color: var(--input-color);
+  background-color: transparent;
   color: var(--text-color);
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
